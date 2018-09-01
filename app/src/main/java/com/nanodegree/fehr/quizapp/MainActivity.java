@@ -1,0 +1,177 @@
+package com.nanodegree.fehr.quizapp;
+
+import android.content.Context;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+
+public class MainActivity extends AppCompatActivity {
+    private int score1;
+    private int score2;
+    private int score3;
+
+    private boolean checked1;
+    private boolean checked2;
+    private boolean checked3;
+    private boolean checked5;
+
+    @BindView(R.id.button51) CheckBox mCheckBox1;
+    @BindView(R.id.button52) CheckBox mCheckBox2;
+    @BindView(R.id.button53) CheckBox mCheckBox3;
+    @BindView(R.id.button54) CheckBox mCheckBox4;
+    @BindView(R.id.edit_text_q4) EditText mEditTextQ4;
+    @BindView(R.id.radiogroup1) RadioGroup mRadioGroup1;
+    @BindView(R.id.radiogroup2) RadioGroup mRadioGroup2;
+    @BindView(R.id.radiogroup3) RadioGroup mRadioGroup3;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+    }
+
+    public void onCheckedQuestion1(View view) {
+        checked1 = ((RadioButton) view).isChecked();
+        switch (view.getId()) {
+            case R.id.button11:
+                if (checked1) {
+                    score1 = 0;
+                    break;
+                }
+            case R.id.button12:
+                if (checked1) {
+                    score1 = 20;
+                    break;
+                }
+            case R.id.button13:
+                if (checked1) {
+                    score1 = 0;
+                    break;
+                }
+        }
+    }
+
+    public void onCheckedQuestion2(View view) {
+        checked2 = ((RadioButton) view).isChecked();
+        switch (view.getId()) {
+            case R.id.button21:
+                if (checked2) {
+                    score2 = 20;
+                    break;
+                }
+            case R.id.button22:
+                if (checked2) {
+                    score2 = 0;
+                    break;
+                }
+            case R.id.button23:
+                if (checked2) {
+                    score2 = 0;
+                    break;
+                }
+        }
+    }
+
+    public void onCheckedQuestion3(View view) {
+        checked3 = ((RadioButton) view).isChecked();
+        switch (view.getId()) {
+            case R.id.button31:
+                if (checked3) {
+                    score3 = 0;
+                    break;
+                }
+            case R.id.button32:
+                if (checked3) {
+                    score3 = 0;
+                    break;
+                }
+            case R.id.button33:
+                if (checked3) {
+                    score3 = 20;
+                    break;
+                }
+        }
+    }
+
+    public void onCheckedQuestion5(View view) {
+        checked5 = mCheckBox1.isChecked() || mCheckBox2.isChecked() || mCheckBox3.isChecked() || mCheckBox4.isChecked();
+    }
+
+    public void clickSubmit(View view) {
+
+        String answer4;
+
+        int score4;
+        int score5;
+        int totalScore;
+
+        answer4 = mEditTextQ4.getText().toString();
+        if (checked1 && checked2 && checked3 && !answer4.equals("") && checked5) {
+
+            // count question 4
+            if (answer4.toLowerCase().equals("java"))
+                score4 = 20;
+            else
+                score4 = 0;
+
+            // count question 5
+            score5 = 0;
+            if (mCheckBox1.isChecked()) {
+                score5 += -10;
+            }
+            if (mCheckBox2.isChecked()) {
+                score5 += 10;
+            }
+            if (mCheckBox3.isChecked()) {
+                score5 += 10;
+            }
+            if (mCheckBox4.isChecked()) {
+                score5 += -10;
+            }
+
+            if (score5 < 0) {
+                score5 = 0;
+            }
+
+            totalScore = score1 + score2 + score3 + score4 + score5;
+            String answer = getString(R.string.your_score_is) + "  " + totalScore;
+            Toast.makeText(getApplicationContext(), answer, Toast.LENGTH_LONG).show();
+        } else {
+            Context context = getApplicationContext();
+            String text = getString(R.string.make_sure_answer_questions);
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        }
+    }
+
+    public void clickReset(View view) {
+        unCheckRadioGroup(mRadioGroup1);
+        unCheckRadioGroup(mRadioGroup2);
+        unCheckRadioGroup(mRadioGroup3);
+        mEditTextQ4.setText("");
+        unCheckCheckBoxes();
+    }
+
+    private void unCheckRadioGroup(RadioGroup radioGroup) {
+        radioGroup.clearCheck();
+    }
+
+    private void unCheckCheckBoxes() {
+        mCheckBox1.setChecked(false);
+        mCheckBox2.setChecked(false);
+        mCheckBox3.setChecked(false);
+        mCheckBox4.setChecked(false);
+        checked5 = false;
+    }
+}

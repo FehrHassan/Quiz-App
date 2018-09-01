@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.nanodegree.fehr.quizapp.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/welcome_message"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/title_question_number_text_view"
+            android:text="@string/title_q_1" />
+
+        <TextView
+            style="@style/question_text_view"
+            android:text="@string/content_q_1" />
+
+        <include layout="@layout/radio_group_1" />
+
+
+        <TextView
+            style="@style/title_question_number_text_view"
+            android:text="@string/title_q_2" />
+
+        <TextView
+            style="@style/question_text_view"
+            android:text="@string/content_q_2" />
+
+        <include layout="@layout/radio_group_2" />
+
+        <TextView
+            style="@style/title_question_number_text_view"
+            android:text="@string/title_q_3" />
+
+        <TextView
+            style="@style/question_text_view"
+            android:text="@string/content_q_3" />
+
+        <include layout="@layout/radio_group_3" />
+
+        <TextView
+            style="@style/title_question_number_text_view"
+            android:text="@string/title_q_4" />
+
+        <TextView
+            style="@style/question_text_view"
+            android:text="@string/content_q_4" />
+
+        <EditText
+            android:id="@+id/edit_text_q4"
+            style="@style/answer_edit_text"
+            android:hint="@string/write_your_answer_here" />
+
+        <TextView
+            style="@style/title_question_number_text_view"
+            android:text="@string/title_q_5" />
+
+        <TextView
+            style="@style/question_text_view"
+            android:text="@string/content_q_5" />
+
+        <CheckBox
+            android:id="@+id/button51"
+            style="@style/check_box"
+            android:onClick="onCheckedQuestion5"
+            android:text="@string/option_q_5_1" />
+
+        <CheckBox
+            android:id="@+id/button52"
+            style="@style/check_box"
+            android:onClick="onCheckedQuestion5"
+            android:text="@string/option_q_5_2" />
+
+        <CheckBox
+            android:id="@+id/button53"
+            style="@style/check_box"
+            android:onClick="onCheckedQuestion5"
+            android:text="@string/option_q_5_3" />
+
+        <CheckBox
+            android:id="@+id/button54"
+            style="@style/check_box"
+            android:onClick="onCheckedQuestion5"
+            android:text="@string/option_q_5_4" />
+
+        <include layout="@layout/buttons" />
+
+    </LinearLayout>
+</ScrollView>

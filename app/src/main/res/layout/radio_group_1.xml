@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/radiogroup1"
+    style="@style/radio_group">
+
+    <RadioButton
+        android:id="@+id/button11"
+        style="@style/radio_button"
+        android:onClick="onCheckedQuestion1"
+        android:text="@string/option_q_1_1" />
+
+    <RadioButton
+        android:id="@+id/button12"
+        style="@style/radio_button"
+        android:onClick="onCheckedQuestion1"
+        android:text="@string/option_q_1_2" />
+
+    <RadioButton
+        android:id="@+id/button13"
+        style="@style/radio_button"
+        android:onClick="onCheckedQuestion1"
+        android:text="@string/option_q_1_3" />
+</RadioGroup>

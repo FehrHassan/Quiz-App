@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="welcome_message">Welcome to the Quiz App!</string>
+    <string name="title_q_1">Question 1</string>
+    <string name="content_q_1">What the Operating System that is used on Google Nexus 5 ?</string>
+    <string name="option_q_1_1">iOS</string>
+    <string name="option_q_1_2">Android</string>
+    <string name="option_q_1_3">Windows</string>
+    <string name="title_q_2">Question 2</string>
+    <string name="content_q_2">Who is provided Android Operating System ?</string>
+    <string name="option_q_2_1">Google</string>
+    <string name="option_q_2_2">Apple</string>
+    <string name="option_q_2_3">Microsoft</string>
+    <string name="title_q_3">Question 3</string>
+    <string name="content_q_3">Android Operating System is based on </string>
+    <string name="option_q_3_1">Macintosh</string>
+    <string name="option_q_3_2">Windows</string>
+    <string name="option_q_3_3">Linux</string>
+    <string name="title_q_4">Question 4</string>
+    <string name="content_q_4">What is the main programming language for Android Development?</string>
+    <string name="title_q_5">Question 5</string>
+    <string name="content_q_5">Which smart phones are running android as an OS ?</string>
+    <string name="option_q_5_1">Nokia N97</string>
+    <string name="option_q_5_2">Google Nexus 5X</string>
+    <string name="option_q_5_3">Google Nexus 4</string>
+    <string name="option_q_5_4">iPhone 7 Plus</string>
+    <string name="your_score_is">Your Score is</string>
+    <string name="make_sure_answer_questions">Please make sure you answer all the questions</string>
+    <string name="write_your_answer_here">Write your answer here in small letters</string>
+    <string name="submit">Submit</string>
+    <string name="reset">Reset</string>
+</resources>
